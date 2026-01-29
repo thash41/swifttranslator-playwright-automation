@@ -23,13 +23,13 @@ test.describe('SwiftTranslator Singlish → Sinhala', () => {
 
       await inputBox.fill(tc.input);
 
-      // Positive & UI: expected Sinhala text should appear (non-exact match to avoid spacing issues)
+      // Positive & UI: expected Sinhala text should appear 
       if (tc.type === 'positive' || tc.type === 'ui') {
         await expect(page.getByText(tc.expected)).toBeVisible();
         return;
       }
 
-      // Negative: ideal Sinhala text should NOT appear (non-exact match)
+      // Negative: ideal Sinhala text should NOT appear 
       await expect(page.getByText(tc.expected)).not.toBeVisible();
     });
   }
